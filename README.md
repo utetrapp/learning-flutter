@@ -20,7 +20,7 @@ List of helpful extensions, most coming from
     - [Better Flutter Tests](https://marketplace.visualstudio.com/items?itemName=andreasblech.better-tests)
     - [flutter_mobx - refactoring help](https://marketplace.visualstudio.com/items?itemName=Flutterando.flutter-mobx)
 
-## Build/Debug
+## Flutter installation
 Check flutter installation
 ```cmd
 flutter doctor
@@ -31,6 +31,8 @@ flutter clean
 flutter pub cache repair
 flutter pub get
 ```
+## Build/Debug
+Android: start emulator first, select it on the bottom of vs code and press f5
 Debug web app
 ```cmd
 flutter run -d chrome
@@ -79,6 +81,8 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 ## Learning path - plan to implement a simple app using the resources and libs listed
 1. create the app following [Get started
 Test drive ](https://docs.flutter.dev/get-started/test-drive)
+  - The template did not ask for a package name. Used notepad++ file search ... -- this is very tedious lateron ....
+  - tested created project on Android, Windows (exe found in src\findus\build\windows\runner\Release), Chrome -- see [Build/Debug](##Build/Debug)
 2. separate string constants as done in wonderous
 3. define theme as done in wonderous
 4. make it responsive using responsive_framework

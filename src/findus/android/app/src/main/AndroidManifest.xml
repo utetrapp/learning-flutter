@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.findus">
+    package="de.h_da.fbi.findus">
    <application
         android:label="findus"
         android:name="${applicationName}"
