@@ -83,7 +83,10 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - The template did not ask for a package name. Used notepad++ file search ... -- this is very tedious lateron ....
   - tested created project on Android, Windows (exe found in src\findus\build\windows\runner\Release), Chrome -- see [Build/Debug](##Build/Debug)
-2. separate string constants as done in wonderous
+2. add internationalization -- otherwise extracting all the strings later is a hassle
+  - following instractions of https://docs.flutter.dev/development/accessibility-and-localization/internationalization -- you need to add the lines step by step, as described, do not tempt to do two steps at once ...
+  - after adding a string you might need to run `flutter gen-l10n`
+  - as it is quite a lot of code to use the strings, I copied the approach of the wonderous app and hence needed to use get_it already
 3. define theme as done in wonderous
 4. make it responsive using responsive_framework
 4. add internationalizaton as done in wonderous (check for lib first)
@@ -95,6 +98,7 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 10. add tests using mockito
 11. cache data local using drift
 12. add fancy buttons using styled_widget
+13. dart_code_metrics
 
   
 
