@@ -25,7 +25,8 @@ dependencies:
   
   # design
   flex_color_scheme: ^6.0.1
-  flutter_launcher_icons: "^0.10.0"
+  flutter_launcher_icons: ^0.10.0
+  responsive_framework: ^0.2.0
 
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2

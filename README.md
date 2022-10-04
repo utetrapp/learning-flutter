@@ -63,6 +63,7 @@ var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
 
 ## Interesting Flutter libs
 Inspired by wonderous example app and the [architecture links](###Architecture), ordered alphabetically. Required/with the project generated libs not included. The descriptions are taken from the packages itself. I plan to use all the mentioned libs in my project.
+If you look for libraries make sure, they support the platforms you want (use filter on the left) and check the scores.
 - [cached_network_image](https://pub.dev/packages/cached_network_image): Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
 - [dio](https://pub.dev/packages/dio): A powerful Http client for Dart, which supports Interceptors, FormData, Request Cancellation, File Downloading, Timeout etc.
 - [drift](https://pub.dev/packages/drift): Drift is a reactive library to store relational data in Dart and Flutter applications. 
