@@ -97,10 +97,10 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 4. own logo/app icon
   - use [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)-- do not forget to call `flutter pub run flutter_launcher_icons:main`
   - if you add more specific icons and go back to a general one, not all settings will be replaced, use carefully
+5. make it responsive using package [responsive_framework](https://pub.dev/packages/responsive_framework)
+6. encapsulate home screen
 ToDo
-4. make it responsive using responsive_framework
-4. add internationalizaton as done in wonderous (check for lib first)
-5. add bottom navigation similar to wonderous
+5. add bottom navigation and two more simple stateless pages and navigation
 6. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 7. fetch data from api using dio
 8. add logging and dio-logger
