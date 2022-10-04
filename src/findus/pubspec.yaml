@@ -20,8 +20,12 @@ dependencies:
   flutter_localizations:
      sdk: flutter
   intl: ^0.17.0
+
   get_it: ^7.2.0
   
+  # color theme
+  flex_color_scheme: ^6.0.1
+
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
 

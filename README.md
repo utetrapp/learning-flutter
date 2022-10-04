@@ -66,7 +66,8 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 - [cached_network_image](https://pub.dev/packages/cached_network_image): Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
 - [dio](https://pub.dev/packages/dio): A powerful Http client for Dart, which supports Interceptors, FormData, Request Cancellation, File Downloading, Timeout etc.
 - [drift](https://pub.dev/packages/drift): Drift is a reactive library to store relational data in Dart and Flutter applications. 
-- [equatable](https://pub.dev/packages/equatable): A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode. 
+- [equatable](https://pub.dev/packages/equatable): A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
+- [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. 
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc): Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package. 
 - [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 - [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
@@ -79,6 +80,7 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 - [styled_widget](https://pub.dev/packages/styled_widget): Simplifying your widget tree structure by defining widget using methods. Taking ispiration from CSS and SwiftUI
 
 ## Learning path - plan to implement a simple app using the resources and libs listed
+After each step: test Android, Windows, Chrome
 1. create the app following [Get started
 Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - The template did not ask for a package name. Used notepad++ file search ... -- this is very tedious lateron ....
@@ -87,7 +89,10 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - following instractions of https://docs.flutter.dev/development/accessibility-and-localization/internationalization -- you need to add the lines step by step, as described, do not tempt to do two steps at once ...
   - after adding a string you might need to run `flutter gen-l10n`
   - as it is quite a lot of code to use the strings, I copied the approach of the wonderous app and hence needed to use get_it already
-3. define theme as done in wonderous
+3. define theme with colors
+  - select a color schema using [coolors](https://coolors.co/) and [material](https://material.io), check/tune [contrast](https://contrast-ratio.com/)
+  - use [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) and the [playground](https://rydmike.com/flexcolorscheme/themesplayground-v5/#/) to generate the schema, as this is important in general, I chose the quick tour and missed the contrast check...
+ToDo
 4. make it responsive using responsive_framework
 4. add internationalizaton as done in wonderous (check for lib first)
 5. add bottom navigation similar to wonderous
@@ -105,10 +110,12 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 ## Resources
 Collection of articles to read again and again ...
 ### Dart
+- https://dart.dev/guides
 - https://dart.dev/guides/language/language-tour
 - https://dart.dev/guides/language/language-tour#asynchrony-support
 
 ### Flutter
+- https://docs.flutter.dev/
 - Coming from Android
   - https://docs.flutter.dev/get-started/flutter-for/android-devs 
   - https://burhanrashid52.medium.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48 
@@ -127,6 +134,7 @@ Collection of articles to read again and again ...
 
 ### Design
 - https://www.figma.com/community/plugin/844008530039534144/FigmaToFlutte
+- https://api.flutter.dev/flutter/material/ThemeData-class.html
 
 
 Any comments appreciated :smile:

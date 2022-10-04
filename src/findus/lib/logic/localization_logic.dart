@@ -15,7 +15,7 @@ class LocalizationLogic {
     final localeCode = await findSystemLocale();
     Locale locale = Locale(localeCode.split('_')[0]);
     if (AppLocalizations.supportedLocales.contains(locale) == false) {
-      locale = Locale('en');
+      locale = const Locale('en');
     }
     _strings = await AppLocalizations.delegate.load(locale);
   }

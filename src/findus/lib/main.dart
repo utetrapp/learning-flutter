@@ -2,27 +2,28 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:get_it/get_it.dart';
+import 'ui/color_schema.dart';
 
 import 'logic/localization_logic.dart';
 
 void main() async {
   GetIt.I.registerLazySingleton<LocalizationLogic>(() => LocalizationLogic());
   await localizationLogic.load();
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({Key? key}) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: "Findus",
-        theme: ThemeData(
-          // This is the theme of your application.
-          primarySwatch: Colors.blue,
-        ),
+        theme: SchemaConstants.findusLightSchema,
+        darkTheme: SchemaConstants.findusDarkTheme,
+        // Use dark or light theme based on system setting.
+        themeMode: ThemeMode.system,
         localizationsDelegates: const [
           AppLocalizations.delegate,
           GlobalMaterialLocalizations.delegate,
