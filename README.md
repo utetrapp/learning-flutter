@@ -67,8 +67,9 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 - [dio](https://pub.dev/packages/dio): A powerful Http client for Dart, which supports Interceptors, FormData, Request Cancellation, File Downloading, Timeout etc.
 - [drift](https://pub.dev/packages/drift): Drift is a reactive library to store relational data in Dart and Flutter applications. 
 - [equatable](https://pub.dev/packages/equatable): A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
-- [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. 
+- [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. A Flutter package to use and make beautiful Material design based themes.
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc): Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package. 
+- [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons): A package which simplifies the task of updating your Flutter app's launcher icon.
 - [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 - [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
 - [get_it](https://pub.dev/packages/get_it): Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"  
@@ -92,6 +93,9 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 3. define theme with colors
   - select a color schema using [coolors](https://coolors.co/) and [material](https://material.io), check/tune [contrast](https://contrast-ratio.com/)
   - use [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) and the [playground](https://rydmike.com/flexcolorscheme/themesplayground-v5/#/) to generate the schema, as this is important in general, I chose the quick tour and missed the contrast check...
+4. own logo/app icon
+  - use [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons)-- do not forget to call `flutter pub run flutter_launcher_icons:main`
+  - if you add more specific icons and go back to a general one, not all settings will be replaced, use carefully
 ToDo
 4. make it responsive using responsive_framework
 4. add internationalizaton as done in wonderous (check for lib first)
