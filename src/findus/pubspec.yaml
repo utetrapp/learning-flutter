@@ -29,6 +29,20 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0 # or whatever version is latest/you need
 
+  # clean architecture
+  # state management and clean structure
+  flutter_bloc: ^8.1.1
+  # # service locator
+  # get_it: ^7.2.0 
+  # # di
+  # injectable: ^1.5.3
+  # # routing, does no code generation oppose to autoroute
+  # go_router: ^5.0.5
+  # # helper for data classes
+  # freezed: ^2.1.1
+  # # helper for equality
+  # equatable: ^2.0.5
+
 dev_dependencies:
   flutter_test:
     sdk: flutter

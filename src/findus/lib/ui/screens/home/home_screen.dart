@@ -1,44 +1,36 @@
+import 'package:bloc/bloc.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:meta/meta.dart';
+
+import 'package:findus/ui/screens/home/cubit/home_cubit.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class HomeScreen extends StatefulWidget {
-  const HomeScreen({super.key, required this.title});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({Key? key, required this.title});
   final String title;
-
-  @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     var strings = LocalizedStrings.of(context)!;
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: Text(title),
         ),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text(strings.homeCounterMessage),
-              Text(
-                '$_counter',
-                style: Theme.of(context).textTheme.headline4,
-              ),
+              BlocBuilder<HomeCubit, HomeInitial>(builder: (context, state) {
+                return Text(state.counterValue.toString());
+              }),
             ],
           ),
         ),
         floatingActionButton: FloatingActionButton(
-          onPressed: _incrementCounter,
+          onPressed: () => BlocProvider.of<HomeCubit>(context).increment(),
           tooltip: strings.homeFabTooltip,
           child: const Icon(Icons.add),
         ));
