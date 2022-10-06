@@ -98,8 +98,15 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - if you add more specific icons and go back to a general one, not all settings will be replaced, use carefully
 5. make it responsive using package [responsive_framework](https://pub.dev/packages/responsive_framework)
 6. encapsulate home screen
+7. refactor internationalization
+  - somehow I did not like the implementation with $strings, e.g. it did not handle missing translations properly
+  - first I undid all changes of 2. --> commit 
+  - follow instructions of 
+    - https://docs.flutter.dev/development/accessibility-and-localization/internationalization
+    - https://medium.com/@Albert221/how-to-internationalize-your-flutter-app-with-arb-files-today-full-blown-tutorial-476ee65ecaed
+	- choose your output-class wisely, as later changes are a hassle, good mix of readability, minimum typing and no confusion with other types
+  - conclusions: Seems to me much simpler and better to understand. The current configuration in l10n.yaml specifies untranslated_messages.txt as location for untranslated strings, i.e. with each build this list will be generated. However, in case of an missing translation the default of en will be used.
 ToDo
-7. refactor internationalization, e.g. fix missing translations and use localization package
 8. add navigation rail and two more simple stateless pages and navigation
 9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 10. add simple dummy server based on python fastapi and mariadb running in docker

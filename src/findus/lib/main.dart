@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'ui/color_schema.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'ui/screens/home/home_screen.dart';
+// intermediate import before the next import may be used instead
+// import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -9,12 +12,25 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: "Findus",
+        // localization
+        onGenerateTitle: (context) => LocalizedStrings.of(context)!.appTitle,
+        supportedLocales: LocalizedStrings.supportedLocales,
+        localizationsDelegates: LocalizedStrings.localizationsDelegates,
+        // intermediate code, needed before the above code could be used
+        // title: 'Localizations Sample App',
+        // localizationsDelegates: [
+        //   GlobalMaterialLocalizations.delegate,
+        //   GlobalWidgetsLocalizations.delegate,
+        //   GlobalCupertinoLocalizations.delegate,
+        // ],
+        // supportedLocales: [
+        //   Locale('en', ''), // English, no country code
+        //   Locale('de', ''), // German, no country code
+        // ],
         theme: SchemaConstants.findusLightSchema,
         darkTheme: SchemaConstants.findusDarkTheme,
         // Use dark or light theme based on system setting.

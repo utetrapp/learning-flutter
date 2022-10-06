@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key, required this.title});
@@ -19,6 +20,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
+    var strings = LocalizedStrings.of(context)!;
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
@@ -27,7 +29,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              const Text("You have pushed the button this many times"),
+              Text(strings.homeCounterMessage),
               Text(
                 '$_counter',
                 style: Theme.of(context).textTheme.headline4,
@@ -37,7 +39,7 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: _incrementCounter,
-          tooltip: "increment",
+          tooltip: strings.homeFabTooltip,
           child: const Icon(Icons.add),
         ));
   }
