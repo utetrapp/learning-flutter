@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'ui/color_schema.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-import 'ui/screens/home/home_screen.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'ui/screens/home/cubit/home_cubit.dart';
 import 'routes.dart';
 
 void main() async {
@@ -14,8 +11,7 @@ void main() async {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
+  Widget build(BuildContext context) => MaterialApp.router(
         // localization
         onGenerateTitle: (context) => LocalizedStrings.of(context)!.appTitle,
         supportedLocales: LocalizedStrings.supportedLocales,
@@ -34,7 +30,8 @@ class MyApp extends StatelessWidget {
               const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
             ],
             background: Container(color: const Color(0xFFF5F5F5))),
-        initialRoute: '/',
-        onGenerateRoute: RouteGenerator.generateRoute);
-  }
+        routerDelegate: appRouter.routerDelegate,
+        routeInformationParser: appRouter.routeInformationParser,
+        routeInformationProvider: appRouter.routeInformationProvider,
+      );
 }

@@ -1,38 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'package:go_router/go_router.dart';
+
 import 'ui/screens/home/home_screen.dart';
 import 'ui/screens/home/cubit/home_cubit.dart';
 
-// see https://github.com/vijayinyoutube/flutter_bloc_cubit_public
-class RouteGenerator {
-  static Route<dynamic> generateRoute(RouteSettings settings) {
-    final args = settings.arguments;
+import 'ui/screens/dummies/dummy_screen1.dart';
+import 'ui/screens/dummies/dummy_screen2.dart';
 
-    switch (settings.name) {
-      case '/':
-        return MaterialPageRoute(
-          builder: (_) => BlocProvider<HomeCubit>(
-            create: (context) => HomeCubit(),
-            child: const HomeScreen(title: 'home'),
-          ),
-        );
-
-      default:
-        return _errorRoute();
-    }
-  }
-
-  static Route<dynamic> _errorRoute() {
-    return MaterialPageRoute(builder: (_) {
-      return Scaffold(
-        appBar: AppBar(
-          title: const Text('Error'),
-        ),
-        body: const Center(
-          child: Text('ERROR'),
-        ),
-      );
-    });
-  }
+class ScreenPaths {
+  static String home = '/';
+  static String dummy1 = '/dummy1';
+  static String dummy2 = '/dummy2';
 }
+
+final appRouter = GoRouter(
+  routes: [
+    GoRoute(
+        path: ScreenPaths.dummy1,
+        builder: (context, state) => const DummyScreen1()),
+    GoRoute(
+        path: ScreenPaths.dummy2,
+        builder: (context, state) => const DummyScreen2()),
+    GoRoute(
+      path: ScreenPaths.home,
+      builder: (context, state) => BlocProvider<HomeCubit>(
+        create: (context) => HomeCubit(),
+        child: const HomeScreen(title: 'home'),
+      ),
+    )
+  ],
+  errorBuilder: (context, state) => Scaffold(
+    appBar: AppBar(
+      title: const Text('Error'),
+    ),
+    body: Center(
+      child: Text(state.error.toString()),
+    ),
+  ),
+);
