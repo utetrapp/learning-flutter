@@ -71,7 +71,6 @@ If you look for libraries make sure, they support the platforms you want (use fi
 - [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. A Flutter package to use and make beautiful Material design based themes.
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc): Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package. 
 - [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons): A package which simplifies the task of updating your Flutter app's launcher icon.
-- [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 - [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
 - [get_it](https://pub.dev/packages/get_it): Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"  
 - [injectable](https://pub.dev/packages/injectable): Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart. 
@@ -100,16 +99,18 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 5. make it responsive using package [responsive_framework](https://pub.dev/packages/responsive_framework)
 6. encapsulate home screen
 ToDo
-5. add bottom navigation and two more simple stateless pages and navigation
-6. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
-7. fetch data from api using dio
-8. add logging and dio-logger
-9. add bloc and repository pattern and get_it and injectable and freezed
-10. add tests using mockito
-11. cache data local using drift
-12. add fancy buttons using styled_widget
-13. dart_code_metrics
-
+7. refactor internationalization, e.g. fix missing translations and use localization package
+8. add navigation rail and two more simple stateless pages and navigation
+9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
+10. add simple dummy server based on python fastapi and mariadb running in docker
+11. fetch data from api using dio
+12. add logging and dio-logger
+13. add bloc and repository pattern and get_it and injectable and freezed
+14. add tests using mockito
+15. cache data local using drift
+16. add fancy buttons using styled_widget
+17. dart_code_metrics
+18. split into different modules/libs to be able to create apps with different functionality based on the same code
   
 
 ## Resources
@@ -141,5 +142,18 @@ Collection of articles to read again and again ...
 - https://www.figma.com/community/plugin/844008530039534144/FigmaToFlutte
 - https://api.flutter.dev/flutter/material/ThemeData-class.html
 
+### Articles/Packages to be analyzed
+- [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
+- https://learnflutter.co/flutter-navigationrail-widget-responsive-navigation-bar/
+https://pub.dev/packages/go_router -- naviation instead of often used autoroute as it does not generate code, further explanation see https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
+- https://medium.com/flutter-community/offline-first-with-flutter-be1e8335d976
+- https://docs.flutter.dev/development/platform-integration/web/renderers
+- https://www.funwithflutter.dev/flutter-keep-your-build-method-pure/
+- https://www.raywenderlich.com/10794904-internationalizing-and-localizing-your-flutter-app
+- https://medium.com/flutter-community/modular-flutter-apps-design-and-considerations-59c5ac65352
+- https://docs.flutter.dev/development/packages-and-plugins/developing-packages
+- https://github.com/flutter/flutter/issues/32329
+- https://github.com/rodydavis/flutter_web_component
+- https://docs.flutter.dev/development/add-to-app/multiple-flutters
 
 Any comments appreciated :smile:
