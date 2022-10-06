@@ -15,13 +15,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
-  # prepare for internationalization
-  flutter_localizations:
-     sdk: flutter
-  intl: ^0.17.0
-
-  get_it: ^7.2.0
   
   # design
   flex_color_scheme: ^6.0.1

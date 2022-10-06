@@ -1,5 +1,0 @@
-{ 
-    "helloWorld": "Hello World!", 
-    "homeCounterMessage": "You have pushed the button this many times",
-    "homeFabTooltip": "Increment"
-}

@@ -145,7 +145,7 @@ Collection of articles to read again and again ...
 ### Articles/Packages to be analyzed
 - [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 - https://learnflutter.co/flutter-navigationrail-widget-responsive-navigation-bar/
-https://pub.dev/packages/go_router -- naviation instead of often used autoroute as it does not generate code, further explanation see https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
+- https://pub.dev/packages/go_router -- naviation instead of often used autoroute as it does not generate code, further explanation see https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
 - https://medium.com/flutter-community/offline-first-with-flutter-be1e8335d976
 - https://docs.flutter.dev/development/platform-integration/web/renderers
 - https://www.funwithflutter.dev/flutter-keep-your-build-method-pure/
@@ -155,5 +155,12 @@ https://pub.dev/packages/go_router -- naviation instead of often used autoroute 
 - https://github.com/flutter/flutter/issues/32329
 - https://github.com/rodydavis/flutter_web_component
 - https://docs.flutter.dev/development/add-to-app/multiple-flutters
+- https://docs.flutter.dev/testing
+- Integration-Tests: https://docs.flutter.dev/cookbook/testing/integration/introduction
+- https://opensourcelibs.com/lib/flutter_multi_touch_canvas
+- https://github.com/fsmajlovic/Flutter_Dicom_File_Viewer
+- https://somniosoftware.com/post/fundamentals-of-the-the-bloc-pattern
+- Docker: cirrusci/flutter:latest
+- https://github.com/Arokip/flutter_diagram_editor
 
 Any comments appreciated :smile:
