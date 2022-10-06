@@ -1,7 +1,5 @@
-import 'package:bloc/bloc.dart';
 import 'package:findus/routes.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:meta/meta.dart';
 
 import 'package:findus/ui/screens/home/cubit/home_cubit.dart';
 
@@ -10,7 +8,8 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key, required this.title});
+  //const HomeScreen({Key? key, required this.title});
+  const HomeScreen({super.key, required this.title});
   final String title;
 
   @override

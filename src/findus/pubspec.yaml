@@ -13,6 +13,10 @@ environment:
   sdk: '>=2.18.2 <3.0.0'
 
 dependencies:
+
+  # clean architecture, state management  
+  bloc: ^8.1.0
+
   flutter:
     sdk: flutter
   
@@ -31,7 +35,7 @@ dependencies:
 
   # clean architecture
   # state management and clean structure
-  flutter_bloc: ^8.1.1
+  flutter_bloc: ^8.1.0
   # # service locator
   # get_it: ^7.2.0 
   # # di

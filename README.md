@@ -106,13 +106,18 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
     - https://medium.com/@Albert221/how-to-internationalize-your-flutter-app-with-arb-files-today-full-blown-tutorial-476ee65ecaed
 	- choose your output-class wisely, as later changes are a hassle, good mix of readability, minimum typing and no confusion with other types
   - conclusions: Seems to me much simpler and better to understand. The current configuration in l10n.yaml specifies untranslated_messages.txt as location for untranslated strings, i.e. with each build this list will be generated. However, in case of an missing translation the default of en will be used.
+8. add bloc, get_it, injectable, go_router and helpers freezed, equatable
+  - do not forget to save the yaml file after adding the dependencies, before you continue --> fetches the packages
+  - good explanation and introduction to bloc: https://bloclibrary.dev/#/gettingstarted
+  - first use bloc in the home page (counter) similar to https://medium.com/vijay-r/flutter-bloc-pattern-simple-cubits-a860549738eb even better would be https://bloclibrary.dev/#/fluttercountertutorial
+  - add go_router 
 ToDo
+  - add get_it, injectable
 8. add navigation rail and two more simple stateless pages and navigation
 9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 10. add simple dummy server based on python fastapi and mariadb running in docker
 11. fetch data from api using dio
 12. add logging and dio-logger
-13. add bloc and repository pattern and get_it and injectable and freezed
 14. add tests using mockito
 15. cache data local using drift
 16. add fancy buttons using styled_widget
@@ -136,10 +141,15 @@ Collection of articles to read again and again ...
 ### Architecture
 - https://blog.logrocket.com/dependency-injection-flutter-using-getit-injectable/
 - https://codewithandrea.com/articles/flutter-repository-pattern/
-- https://pub.dev/packages/get
 - https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 -- from my point of view, a bit too much
 - [GetX VS Bloc](https://xceltec.blogspot.com/2022/05/getx-vs-bloc-which-one-is-best-for-flutter-app-development.html) -- I follow the arguments and will use bloc. Most convincing arguments: no sponsors (>100 contributors), anti patterns, bad testability 
 
+### Navigation
+I decided to use go_router instead of autoroute, because go_router does not need a special code generation and is easyer to understand.
+The app developed here uses a very basic navigation, more complex examples see
+- https://codewithandrea.com/articles/flutter-bottom-navigation-bar-nested-routes-gorouter-beamer/
+or with login-page
+- https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
 ### Example apps
 - https://github.com/gskinnerTeam/flutter-wonderous-app
 - https://github.com/jhomlala/feather
@@ -151,12 +161,9 @@ Collection of articles to read again and again ...
 
 ### Articles/Packages to be analyzed
 - [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
-- https://learnflutter.co/flutter-navigationrail-widget-responsive-navigation-bar/
-- https://pub.dev/packages/go_router -- naviation instead of often used autoroute as it does not generate code, further explanation see https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
 - https://medium.com/flutter-community/offline-first-with-flutter-be1e8335d976
 - https://docs.flutter.dev/development/platform-integration/web/renderers
 - https://www.funwithflutter.dev/flutter-keep-your-build-method-pure/
-- https://www.raywenderlich.com/10794904-internationalizing-and-localizing-your-flutter-app
 - https://medium.com/flutter-community/modular-flutter-apps-design-and-considerations-59c5ac65352
 - https://docs.flutter.dev/development/packages-and-plugins/developing-packages
 - https://github.com/flutter/flutter/issues/32329
