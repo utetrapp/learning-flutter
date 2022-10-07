@@ -71,14 +71,16 @@ If you look for libraries make sure, they support the platforms you want (use fi
 - [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. A Flutter package to use and make beautiful Material design based themes.
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc): Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package. 
 - [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons): A package which simplifies the task of updating your Flutter app's launcher icon.
+- [flutter_native_splash](https://pub.dev/packages/flutter_native_splash): Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
 - [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
 - [get_it](https://pub.dev/packages/get_it): Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"  
-- [injectable](https://pub.dev/packages/injectable): Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart. 
 - [logger](https://pub.dev/packages/logger): Small, easy to use and extensible logger which prints beautiful logs. 
 - [mockito](https://pub.dev/packages/mockito): A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
 - [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger): Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format. 
 - [responsive_framework](https://pub.dev/packages/responsive_framework): Easily make Flutter apps responsive. Automatically adapt UI to different screen sizes. Responsiveness made simple.
 - [styled_widget](https://pub.dev/packages/styled_widget): Simplifying your widget tree structure by defining widget using methods. Taking ispiration from CSS and SwiftUI
+Maybe later or for other projects
+- [injectable](https://pub.dev/packages/injectable): Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart. 
 
 ## Learning path - plan to implement a simple app using the resources and libs listed
 After each step: test Android, Windows, Chrome
@@ -104,16 +106,17 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - follow instructions of 
     - https://docs.flutter.dev/development/accessibility-and-localization/internationalization
     - https://medium.com/@Albert221/how-to-internationalize-your-flutter-app-with-arb-files-today-full-blown-tutorial-476ee65ecaed
-	- choose your output-class wisely, as later changes are a hassle, good mix of readability, minimum typing and no confusion with other types
+  - choose your output-class wisely, as later changes are a hassle, good mix of readability, minimum typing and no confusion with other types
   - conclusions: Seems to me much simpler and better to understand. The current configuration in l10n.yaml specifies untranslated_messages.txt as location for untranslated strings, i.e. with each build this list will be generated. However, in case of an missing translation the default of en will be used.
-8. add bloc, get_it, injectable, go_router and helpers freezed, equatable
+8. add bloc, get_it, go_router 
   - do not forget to save the yaml file after adding the dependencies, before you continue --> fetches the packages
-  - good explanation and introduction to bloc: https://bloclibrary.dev/#/gettingstarted
+  - good explanation and introduction to bloc: https://bloclibrary.dev/#/gettingstarted or https://medium.com/flutter-community/flutter-bloc-package-295b53e95c5c
   - first use bloc in the home page (counter) similar to https://medium.com/vijay-r/flutter-bloc-pattern-simple-cubits-a860549738eb even better would be https://bloclibrary.dev/#/fluttercountertutorial
   - add go_router 
+  - add get_it
+  - decided against injectable, maybe later, but even in https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 not needed/used
 ToDo
-  - add get_it, injectable
-8. add navigation rail and two more simple stateless pages and navigation
+9. add a splash screen using 
 9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 10. add simple dummy server based on python fastapi and mariadb running in docker
 11. fetch data from api using dio
@@ -146,11 +149,14 @@ Collection of articles to read again and again ...
 
 ### Navigation
 I decided to use go_router instead of autoroute, because go_router does not need a special code generation and is easyer to understand.
-The app developed here uses a very basic navigation, more complex examples see
+- [Flutter Navigation with GoRouter: Go vs Push](https://codewithandrea.com/articles/flutter-navigation-gorouter-go-vs-push/)
+The app developed here uses a very basic navigation. More complex examples see
 - https://codewithandrea.com/articles/flutter-bottom-navigation-bar-nested-routes-gorouter-beamer/
 or with login-page
 - https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
+
 ### Example apps
+- https://github.com/codestronaut/flutter-weather-app-sample
 - https://github.com/gskinnerTeam/flutter-wonderous-app
 - https://github.com/jhomlala/feather
 - https://github.com/burhanrashid52/WhatTodo
@@ -173,7 +179,6 @@ or with login-page
 - Integration-Tests: https://docs.flutter.dev/cookbook/testing/integration/introduction
 - https://opensourcelibs.com/lib/flutter_multi_touch_canvas
 - https://github.com/fsmajlovic/Flutter_Dicom_File_Viewer
-- https://somniosoftware.com/post/fundamentals-of-the-the-bloc-pattern
 - Docker: cirrusci/flutter:latest
 - https://github.com/Arokip/flutter_diagram_editor
 

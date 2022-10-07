@@ -27,18 +27,14 @@ class HomeScreen extends StatelessWidget {
               BlocBuilder<HomeCubit, HomeInitial>(builder: (context, state) {
                 return Text(state.counterValue.toString());
               }),
-              TextButton(
+              ElevatedButton(
+                onPressed: () => context.push(ScreenPaths.dummy1),
                 child: const Text('dummy1'),
-                onPressed: () {
-                  context.push(ScreenPaths.dummy1);
-                },
               ),
-              TextButton(
-                child: const Text('dummy2'),
-                onPressed: () {
-                  context.push(ScreenPaths.dummy2);
-                },
-              )
+              ElevatedButton(
+                onPressed: () => context.push(ScreenPaths.dummy2),
+                child: const Text('dummy2-modal'),
+              ),
             ],
           ),
         ),

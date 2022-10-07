@@ -7,9 +7,9 @@ class DummyScreen2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Dummy screen 2"),
+        title: const Text("Dummy screen 2 - modal"),
       ),
-      body: const Center(child: Text("Dummy 2")),
+      body: const Center(child: Text("Dummy 2 - modal")),
     );
   }
 }

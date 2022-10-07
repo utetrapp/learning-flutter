@@ -16,13 +16,17 @@ class ScreenPaths {
 }
 
 final appRouter = GoRouter(
+  initialLocation: ScreenPaths.home,
   routes: [
     GoRoute(
         path: ScreenPaths.dummy1,
         builder: (context, state) => const DummyScreen1()),
     GoRoute(
         path: ScreenPaths.dummy2,
-        builder: (context, state) => const DummyScreen2()),
+        pageBuilder: (context, state) => const MaterialPage(
+              fullscreenDialog: true,
+              child: DummyScreen2(),
+            )),
     GoRoute(
       path: ScreenPaths.home,
       builder: (context, state) => BlocProvider<HomeCubit>(
