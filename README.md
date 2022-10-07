@@ -117,8 +117,8 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - add get_it
   - decided against injectable, maybe later, but even in https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 not needed/used
 9. add a splash screen using flutter_native_splash, follow the instructions of https://pub.dev/packages/flutter_native_splash
-ToDo
 10. add simple dummy server based on python fastapi and mariadb running in docker
+ToDo
 9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 11. fetch data from api using dio
 12. add logging and dio-logger

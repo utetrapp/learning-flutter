@@ -1,0 +1,48 @@
+version: '3'
+services:
+  findus-demo-api:
+    build:
+      context: ./api
+    container_name: findus-demo-api
+    environment:
+      TZ: "Europe/Berlin"
+    volumes:
+      - ./api/app:/app 
+    ports:
+      - 8004:8004
+    env_file: ./api/.env
+    networks:
+      - findus_network
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - mariadb
+
+  mariadb:
+    build:
+      context: ./db    
+    container_name: findus-demo-db
+    volumes:
+      - mariadb:/var/lib/mysql
+      - ./db/mariadb.setup:/docker-entrypoint-initdb.d
+    environment:
+      MYSQL_INITDB_SKIP_TZINFO: 1
+      TZ: "Europe/Berlin"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "no"
+      MYSQL_DATABASE: "findus"
+      MYSQL_USER: "public"
+      MYSQL_PASSWORD: "public"
+    env_file: env.txt
+    ports:
+      - "3306:3306"
+    networks:
+      - findus_network
+
+volumes:
+    mariadb:
+    
+networks:
+    findus_network:
+        name: findus_net
+        driver: bridge
+    
