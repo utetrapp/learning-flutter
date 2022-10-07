@@ -4,10 +4,20 @@ import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'routes.dart';
 import 'injection.dart' as di;
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   di.init();
+  await _initialize();
+  FlutterNativeSplash.remove();
   runApp(const MyApp());
+}
+
+Future _initialize() async {
+  //await .... loading assets or whatever takes time
 }
 
 class MyApp extends StatelessWidget {

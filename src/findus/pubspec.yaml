@@ -23,6 +23,7 @@ dependencies:
   flex_color_scheme: ^6.0.1
   flutter_launcher_icons: ^0.10.0
   responsive_framework: ^0.2.0
+  flutter_native_splash: ^2.2.10
 
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
@@ -50,6 +51,10 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^2.0.0
+
+flutter_native_splash:
+    image: "assets/images/ic_launcher.png"
+    color: "#fafafa"
 
 # The following section is specific to Flutter packages.
 flutter:

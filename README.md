@@ -82,6 +82,7 @@ If you look for libraries make sure, they support the platforms you want (use fi
 Maybe later or for other projects
 - [injectable](https://pub.dev/packages/injectable): Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart. 
 
+
 ## Learning path - plan to implement a simple app using the resources and libs listed
 After each step: test Android, Windows, Chrome
 1. create the app following [Get started
@@ -115,10 +116,10 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - add go_router 
   - add get_it
   - decided against injectable, maybe later, but even in https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 not needed/used
+9. add a splash screen using flutter_native_splash, follow the instructions of https://pub.dev/packages/flutter_native_splash
 ToDo
-9. add a splash screen using 
-9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 10. add simple dummy server based on python fastapi and mariadb running in docker
+9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
 11. fetch data from api using dio
 12. add logging and dio-logger
 14. add tests using mockito
@@ -154,6 +155,7 @@ The app developed here uses a very basic navigation. More complex examples see
 - https://codewithandrea.com/articles/flutter-bottom-navigation-bar-nested-routes-gorouter-beamer/
 or with login-page
 - https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
+Sophisticated splash screen: 
 
 ### Example apps
 - https://github.com/codestronaut/flutter-weather-app-sample
