@@ -3,8 +3,10 @@ import 'ui/color_schema.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'routes.dart';
+import 'injection.dart' as di;
 
-void main() async {
+void main() {
+  di.init();
   runApp(const MyApp());
 }
 

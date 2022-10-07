@@ -36,15 +36,13 @@ dependencies:
   # state management and clean structure
   flutter_bloc: ^8.1.0
   bloc: ^8.1.0
-  # # service locator
-  # get_it: ^7.2.0 
-  # # di
-  # injectable: ^1.5.3
+  # service locator
+  get_it: ^7.2.0 
   # routing, does no code generation oppose to autoroute
   go_router: ^5.0.5
   # # helper for data classes
   # freezed: ^2.1.1
-  # # helper for equality
+  # allows value based equality for our classes e.g Eat() == Eat() is true
   # equatable: ^2.0.5
 
 dev_dependencies:
