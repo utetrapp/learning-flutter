@@ -47,12 +47,15 @@ flutter build windows
 - no type declaration necessary, nevertheless strongly typed
 - everything is an object, even ints
 - type Runes (emojis, utf32 strings -- normal String is utf8)
-- new is optional
+- new is optional and should be omitted
+- abstract instead of interface, i.e. dows not know the word interface
+- all classes have an implicit interface, i.e. no need to define an abstract class to support mocking
 - single inheritance
 - supports optional parameters
 - null safety as in Kotlin with ?
 - operators like ?:
 - no public, private, protected, private for lib by naming prefix _, hence default is public
+- import of only a part of a library `import 'package:lib1/lib1.dart' show foo;`
 - supports async/await
 - list looks like an array
 - as in Python
@@ -66,24 +69,35 @@ Inspired by wonderous example app and the [architecture links](###Architecture),
 If you look for libraries make sure, they support the platforms you want (use filter on the left) and check the scores.
 - [cached_network_image](https://pub.dev/packages/cached_network_image): Flutter library to load and cache network images. Can also be used with placeholder and error widgets.
 - [dio](https://pub.dev/packages/dio): A powerful Http client for Dart, which supports Interceptors, FormData, Request Cancellation, File Downloading, Timeout etc.
-- [drift](https://pub.dev/packages/drift): Drift is a reactive library to store relational data in Dart and Flutter applications. 
 - [equatable](https://pub.dev/packages/equatable): A Dart package that helps to implement value based equality without needing to explicitly override == and hashCode.
 - [flex_color_scheme](https://pub.dev/packages/flex_color_scheme) -- very usable and easy way to define your thema, including playground. A Flutter package to use and make beautiful Material design based themes.
 - [flutter_bloc](https://pub.dev/packages/flutter_bloc): Flutter Widgets that make it easy to implement the BLoC (Business Logic Component) design pattern. Built to be used with the bloc state management package. 
 - [flutter_launcher_icons](https://pub.dev/packages/flutter_launcher_icons): A package which simplifies the task of updating your Flutter app's launcher icon.
 - [flutter_native_splash](https://pub.dev/packages/flutter_native_splash): Customize Flutter's default white native splash screen with background color and splash image. Supports dark mode, full screen, and more.
-- [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
 - [get_it](https://pub.dev/packages/get_it): Simple direct Service Locator that allows to decouple the interface from a concrete implementation and to access the concrete implementation from everywhere in your App"  
 - [logger](https://pub.dev/packages/logger): Small, easy to use and extensible logger which prints beautiful logs. 
 - [mockito](https://pub.dev/packages/mockito): A mock framework inspired by Mockito with APIs for Fakes, Mocks, behavior verification, and stubbing.
-- [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger): Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format. 
 - [responsive_framework](https://pub.dev/packages/responsive_framework): Easily make Flutter apps responsive. Automatically adapt UI to different screen sizes. Responsiveness made simple.
-- [styled_widget](https://pub.dev/packages/styled_widget): Simplifying your widget tree structure by defining widget using methods. Taking ispiration from CSS and SwiftUI
+
 Maybe later or for other projects
+- https://pub.dev/packages/flutter_cache_manager
 - [injectable](https://pub.dev/packages/injectable): Injectable is a convenient code generator for get_it. Inspired by Angular DI, Guice DI and inject.dart. 
+- [drift](https://pub.dev/packages/drift): Drift is a reactive library to store relational data in Dart and Flutter applications. 
+- [freezed](https://pub.dev/packages/freezed): Code generation for immutable classes that has a simple syntax/API without compromising on the features. 
+- [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger): Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format. 
+- [styled_widget](https://pub.dev/packages/styled_widget): Simplifying your widget tree structure by defining widget using methods. Taking ispiration from CSS and SwiftUI
+- https://pub.dev/packages/collection
+- https://pub.dev/packages/very_good_analysis
+
 
 
 ## Learning path - plan to implement a simple app using the resources and libs listed
+I decided to use basically bloc and hence the repository pattern (see [Android Developers: Architecture](https://developer.android.com/topic/architecture) and [Bloc: Architecture](https://bloclibrary.dev/#/architecture). 
+The repository helps to adapt/prepare/union the data, as it is needed by the domain. The repository makes it easy to implement caching, as the data may come from a network provider (or even many of them) or a local provider. Basically, the
+repository exposes the data for the domain layer.
+The following
+picture illustrates the resulting architecture -- although I will not implement the local caching for the time being. As [service locator](https://en.wikipedia.org/wiki/Service_locator_pattern) I will use get_it.
+![architecture](architecture.jpg)
 After each step: test Android, Windows, Chrome
 1. create the app following [Get started
 Test drive ](https://docs.flutter.dev/get-started/test-drive)
@@ -119,14 +133,16 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
 9. add a splash screen using flutter_native_splash, follow the instructions of https://pub.dev/packages/flutter_native_splash
 10. add simple dummy server based on python fastapi and mariadb running in docker
 ToDo
-9. add a listview as described in [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
-11. fetch data from api using dio
-12. add logging and dio-logger
+11. implement kind of repository patern, fetch data from demo api using dio
+  - add folders
+  - tried freezed and decided against it, although it reduces the code, at the moment I prefere to really see and understand, what I do ;-)
+  - add dio
+  - [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
+  - fetch data from api using dio, use stream instead of future for getall, see https://bloclibrary.dev/#/fluttertodostutorial
+  - add logging and dio-logger
+
 14. add tests using mockito
-15. cache data local using drift
-16. add fancy buttons using styled_widget
 17. dart_code_metrics
-18. split into different modules/libs to be able to create apps with different functionality based on the same code
   
 
 ## Resources
@@ -143,10 +159,10 @@ Collection of articles to read again and again ...
   - https://burhanrashid52.medium.com/flutter-for-android-developers-how-to-design-activity-ui-in-flutter-4bf7b0de1e48 
 
 ### Architecture
-- https://blog.logrocket.com/dependency-injection-flutter-using-getit-injectable/
 - https://codewithandrea.com/articles/flutter-repository-pattern/
 - https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 -- from my point of view, a bit too much
 - [GetX VS Bloc](https://xceltec.blogspot.com/2022/05/getx-vs-bloc-which-one-is-best-for-flutter-app-development.html) -- I follow the arguments and will use bloc. Most convincing arguments: no sponsors (>100 contributors), anti patterns, bad testability 
+- implement caching https://github.com/AbedElazizShe/flutter_clean_architecture
 
 ### Navigation
 I decided to use go_router instead of autoroute, because go_router does not need a special code generation and is easyer to understand.
@@ -183,5 +199,9 @@ Sophisticated splash screen:
 - https://github.com/fsmajlovic/Flutter_Dicom_File_Viewer
 - Docker: cirrusci/flutter:latest
 - https://github.com/Arokip/flutter_diagram_editor
+- https://graphql.org/
+- https://medium.com/@v.ditsyak/ultimate-toolchain-to-work-with-graphql-in-flutter-13aef79c6484
+- https://codewithandrea.com/articles/flutter-api-keys-dart-define-env-files/
+
 
 Any comments appreciated :smile:

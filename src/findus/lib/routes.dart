@@ -6,13 +6,18 @@ import 'package:go_router/go_router.dart';
 import 'ui/screens/home/home_screen.dart';
 import 'ui/screens/home/cubit/home_cubit.dart';
 
+import "ui/screens/animal/animals_screen.dart";
+import "ui/screens/animal/cubit/animal_cubit.dart";
+
 import 'ui/screens/dummies/dummy_screen1.dart';
 import 'ui/screens/dummies/dummy_screen2.dart';
+import 'injection.dart' as di;
 
 class ScreenPaths {
   static String home = '/';
   static String dummy1 = '/dummy1';
   static String dummy2 = '/dummy2';
+  static String animals = '/animals';
 }
 
 final appRouter = GoRouter(
@@ -26,6 +31,12 @@ final appRouter = GoRouter(
         pageBuilder: (context, state) => const MaterialPage(
               fullscreenDialog: true,
               child: DummyScreen2(),
+            )),
+    GoRoute(
+        path: ScreenPaths.animals,
+        builder: (context, state) => BlocProvider<AnimalCubit>(
+              create: (context) => AnimalCubit(di.locator()),
+              child: const AnimalsScreen(title: 'animals'),
             )),
     GoRoute(
       path: ScreenPaths.home,

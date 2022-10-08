@@ -1,29 +1,28 @@
+import 'package:findus/data/dataprovider/findus_api.dart';
+import 'package:findus/ui/screens/animal/cubit/animal_cubit.dart';
 import 'package:get_it/get_it.dart';
+import 'package:findus/data/repository/animal_repository.dart';
+import 'package:dio/dio.dart';
 
 final locator = GetIt.instance;
 
 // see https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604
 // and repository https://raw.githubusercontent.com/codestronaut/flutter-weather-app-sample/main/lib/injection.dart
 init() {
-  // bloc
-  //locator.registerFactory(() => WeatherBloc(locator()));
+  // cubit for animals
+  locator.registerFactory(() => AnimalCubit(locator()));
 
   // repository
-  // locator.registerLazySingleton<WeatherRepository>(
-  //   () => WeatherRepositoryImpl(
-  //     remoteDataSource: locator(),
-  //   ),
-  // );
 
-  // // data source
-  // locator.registerLazySingleton<RemoteDataSource>(
-  //   () => RemoteDataSourceImpl(
-  //     client: locator(),
-  //   ),
-  // );
+  locator.registerLazySingleton<AnimalRepository>(
+      () => AnimalRepository(findusApi: locator()));
 
-  // // external
-  // locator.registerLazySingleton(() => http.Client());
+  // data source
+  locator.registerLazySingleton<FindusAPI>(
+    () => FindusAPI(dio: locator()),
+  );
 
   // add further initialization code
+  // external
+  locator.registerLazySingleton(() => Dio());
 }

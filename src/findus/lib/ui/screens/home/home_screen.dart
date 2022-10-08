@@ -8,7 +8,6 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
 
 class HomeScreen extends StatelessWidget {
-  //const HomeScreen({Key? key, required this.title});
   const HomeScreen({super.key, required this.title});
   final String title;
 
@@ -34,6 +33,10 @@ class HomeScreen extends StatelessWidget {
               ElevatedButton(
                 onPressed: () => context.push(ScreenPaths.dummy2),
                 child: const Text('dummy2-modal'),
+              ),
+              ElevatedButton(
+                onPressed: () => context.push(ScreenPaths.animals),
+                child: const Text('animals'),
               ),
             ],
           ),

@@ -1,6 +1,7 @@
 {
   "de": [
     "appTitle",
-    "homeFabTooltip"
+    "homeFabTooltip",
+    "animalsTitle"
   ]
 }

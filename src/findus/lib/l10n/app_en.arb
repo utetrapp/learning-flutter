@@ -2,5 +2,6 @@
     "@@locale": "en",
     "appTitle": "Findus",
     "homeCounterMessage": "You have pushed the button this many times",
-    "homeFabTooltip": "Increment"
+    "homeFabTooltip": "Increment",
+    "animalsTitle":"Animals"
 }
