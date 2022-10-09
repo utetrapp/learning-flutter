@@ -12,7 +12,8 @@ class FindusAPI {
     final response = await dio.get(FindusApiConstants.animalUrl);
 
     if (response.statusCode == FindusApiConstants.statusOk) {
-      var animalJsonList = response.data as List;
+      // @todo may need adaption, depends on the data structur the server sends, when in doubt, set a breakpoint here
+      var animalJsonList = response.data["list"] as List;
       return animalJsonList
           .map((animalJson) => Animal.fromJson(animalJson))
           .toList();
