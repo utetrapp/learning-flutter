@@ -41,6 +41,8 @@ Build windows app
 ```cmd
 flutter build windows
 ```
+Tuning
+- - https://docs.flutter.dev/development/platform-integration/web/renderers
 
 
 ## Specialities of Dart -- coming from Kotlin, ...
@@ -87,7 +89,7 @@ Maybe later or for other projects
 - [pretty_dio_logger](https://pub.dev/packages/pretty_dio_logger): Pretty Dio logger is a Dio interceptor that logs network calls in a pretty, easy to read format. 
 - [styled_widget](https://pub.dev/packages/styled_widget): Simplifying your widget tree structure by defining widget using methods. Taking ispiration from CSS and SwiftUI
 - https://pub.dev/packages/collection
-- https://pub.dev/packages/very_good_analysis
+- [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 
 
 
@@ -132,18 +134,28 @@ Test drive ](https://docs.flutter.dev/get-started/test-drive)
   - decided against injectable, maybe later, but even in https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 not needed/used
 9. add a splash screen using flutter_native_splash, follow the instructions of https://pub.dev/packages/flutter_native_splash
 10. add simple dummy server based on python fastapi and mariadb running in docker
-ToDo
 11. implement kind of repository patern, fetch data from demo api using dio
   - add folders
   - tried freezed and decided against it, although it reduces the code, at the moment I prefere to really see and understand, what I do ;-)
   - add dio
   - [What is the alternative to a ListView in Flutter?](https://docs.flutter.dev/get-started/flutter-for/android-devs#listviews--adapters)
   - fetch data from api using dio, use stream instead of future for getall, see https://bloclibrary.dev/#/fluttertodostutorial
-  - add logging and dio-logger
-
-14. add tests using mockito
+    - somehow I used wrong urls, make sure they work ...
+	- sometimes the server needs to be restarted, check in your browser with http://localhost:8004/animal
+	- android emulator does not work with localhost, hence check your ip with netstat and put it into src\findus\lib\data\constants.dart
+ToDo
+12. add tests using mockito
 17. dart_code_metrics
-  
+18. many things to do from here, e.g.
+  - add crud operations in animal list
+    - animal_details screen with editable fields
+	- cubit for one animal, inform list of changes
+	- navigation
+  - unify imports
+  - split into reasonable packages
+  - extract all strings into arb files
+  - add intelligent local caching
+  - tune design ;-)
 
 ## Resources
 Collection of articles to read again and again ...
@@ -162,7 +174,10 @@ Collection of articles to read again and again ...
 - https://codewithandrea.com/articles/flutter-repository-pattern/
 - https://betterprogramming.pub/flutter-clean-architecture-test-driven-development-practical-guide-445f388e8604 -- from my point of view, a bit too much
 - [GetX VS Bloc](https://xceltec.blogspot.com/2022/05/getx-vs-bloc-which-one-is-best-for-flutter-app-development.html) -- I follow the arguments and will use bloc. Most convincing arguments: no sponsors (>100 contributors), anti patterns, bad testability 
-- implement caching https://github.com/AbedElazizShe/flutter_clean_architecture
+- [caching implementation](https://github.com/AbedElazizShe/flutter_clean_architecture)
+- [packages](- https://docs.flutter.dev/development/packages-and-plugins/developing-packages)
+- https://petercoding.com/flutter/2021/07/21/using-get-it-in-flutter/
+- Docker: cirrusci/flutter:latest
 
 ### Navigation
 I decided to use go_router instead of autoroute, because go_router does not need a special code generation and is easyer to understand.
@@ -171,7 +186,10 @@ The app developed here uses a very basic navigation. More complex examples see
 - https://codewithandrea.com/articles/flutter-bottom-navigation-bar-nested-routes-gorouter-beamer/
 or with login-page
 - https://www.raywenderlich.com/28987851-flutter-navigator-2-0-using-go_router
-Sophisticated splash screen: 
+
+### Testing
+- [Testing Flutter apps](https://docs.flutter.dev/testing)
+- [An introduction to integration testing](Integration-Tests: https://docs.flutter.dev/cookbook/testing/integration/introduction)
 
 ### Example apps
 - https://github.com/codestronaut/flutter-weather-app-sample
@@ -184,24 +202,7 @@ Sophisticated splash screen:
 - https://api.flutter.dev/flutter/material/ThemeData-class.html
 
 ### Articles/Packages to be analyzed
-- [flutter_secure_storage](https://pub.dev/packages/flutter_secure_storage): Flutter Secure Storage provides API to store data in secure storage. Keychain is used in iOS, KeyStore based solution is used in Android. 
 - https://medium.com/flutter-community/offline-first-with-flutter-be1e8335d976
-- https://docs.flutter.dev/development/platform-integration/web/renderers
-- https://www.funwithflutter.dev/flutter-keep-your-build-method-pure/
-- https://medium.com/flutter-community/modular-flutter-apps-design-and-considerations-59c5ac65352
-- https://docs.flutter.dev/development/packages-and-plugins/developing-packages
-- https://github.com/flutter/flutter/issues/32329
-- https://github.com/rodydavis/flutter_web_component
-- https://docs.flutter.dev/development/add-to-app/multiple-flutters
-- https://docs.flutter.dev/testing
-- Integration-Tests: https://docs.flutter.dev/cookbook/testing/integration/introduction
-- https://opensourcelibs.com/lib/flutter_multi_touch_canvas
-- https://github.com/fsmajlovic/Flutter_Dicom_File_Viewer
-- Docker: cirrusci/flutter:latest
-- https://github.com/Arokip/flutter_diagram_editor
-- https://graphql.org/
-- https://medium.com/@v.ditsyak/ultimate-toolchain-to-work-with-graphql-in-flutter-13aef79c6484
-- https://codewithandrea.com/articles/flutter-api-keys-dart-define-env-files/
-
+- [issue to render web app inside custom html element](https://github.com/flutter/flutter/issues/32329)
 
 Any comments appreciated :smile:

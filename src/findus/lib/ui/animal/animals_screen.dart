@@ -1,5 +1,5 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:findus/ui/screens/animal/cubit/animal_cubit.dart';
+import 'package:findus/ui/animal/cubit/animal_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:findus/data/entity/animal.dart';
 import "widget/animals_item.dart";

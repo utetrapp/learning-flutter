@@ -3,14 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:go_router/go_router.dart';
 
-import 'ui/screens/home/home_screen.dart';
-import 'ui/screens/home/cubit/home_cubit.dart';
+import 'ui/home/home_screen.dart';
+import 'ui/home/cubit/home_cubit.dart';
 
-import "ui/screens/animal/animals_screen.dart";
-import "ui/screens/animal/cubit/animal_cubit.dart";
+import "ui/animal/animals_screen.dart";
+import "ui/animal/cubit/animal_cubit.dart";
 
-import 'ui/screens/dummies/dummy_screen1.dart';
-import 'ui/screens/dummies/dummy_screen2.dart';
+import 'ui/dummies/dummy_screen1.dart';
+import 'ui/dummies/dummy_screen2.dart';
 import 'injection.dart' as di;
 
 class ScreenPaths {

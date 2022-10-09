@@ -1,5 +1,5 @@
 import 'package:findus/data/dataprovider/findus_api.dart';
-import 'package:findus/ui/screens/animal/cubit/animal_cubit.dart';
+import 'package:findus/ui/animal/cubit/animal_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:findus/data/repository/animal_repository.dart';
 import 'package:dio/dio.dart';
